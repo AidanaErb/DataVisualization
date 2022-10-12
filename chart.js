@@ -15,7 +15,7 @@ async function buildPlot() {
             top: 15,
             left: 15,
             bottom: 15,
-            right: 15
+            right: 25
         }
     };
 
@@ -49,9 +49,11 @@ async function buildPlot() {
 
     bounded.append("path")
         .attr("d",lineGenerator(data))
-        // .attr("fill","none")
+        .attr("fill","none")
         .attr("stroke","black");
-    svg.call(x_axis);
+    svg.append('g').attr("transform", `translate(20,${dimension.boundedHeight})`).call(x_axis);
+    svg.append('g').attr("transform", `translate(20,0)`).call(y_axis);
+
     
     const yScalerTempHigh = d3.scaleLinear()
         .domain(d3.extent(data,yAccessorTempHigh))
@@ -63,7 +65,7 @@ async function buildPlot() {
 
     bounded.append("path")
         .attr("d",lineGeneratorTempHigh(data))
-        // .attr("fill","none")
+        .attr("fill","none")
         .attr("stroke","red");
 
 }
