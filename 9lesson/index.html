@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Network</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js" integrity="sha512-MefNfAGJ/pEy89xLOFs3V6pYPs6AmUhXJrRlydI/9wZuGrqxmrdQ80zKHUcyadAcpH67teDZcBeS6oMJLPtTqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="graph.js"></script>
+  <link rel="stylesheet" href="network.css">
+  <style>
+    .body_div{
+      width: 100%;
+      display: flex;
+    }
+    .wrapper{
+      width: 100%;
+    }
+    .wr2{
+      width: 30%;
+    }
+  </style>
+</head>
+<body>
+  <div class="body_div">
+<div id="wrapper">
+
+</div>
+<div class="wr2">
+<form action="" method="post" style="margin-top: 50px;">
+  <div class="inputting">Id:</div><input type="text" name="id" id="id">
+  <div class="inputting">Role:</div><input type="text" name="role" id="role">
+  <div class="inputting">From:</div><input type="text" name="team" id="team" placeholder="none">
+
+  <button class="btn" type="button" id="avg" onclick="addNodesAndEdges()">Create node and edge</button>
+</form>
+
+<form action="" method="post" style="margin-top: 50px;">
+  <div class="inputting">Id:</div><input type="text" name="delete_id" id="delete_id">
+
+  <button class="btn" type="button" id="avg" onclick="deleteEdges()">Delete edge</button>
+</form>
+
+</div>
+</div>
+</body>
+</html>
